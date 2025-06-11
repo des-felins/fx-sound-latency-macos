@@ -43,13 +43,9 @@ public class CanvasController implements Initializable {
 
     private void keyPressed(KeyEvent keyEvent) {
         AudioClip sound = keyToSound.get(keyEvent.getCode());
-        if(sound.isPlaying()) {
-            return;
-        }
-        else {
+        if(!sound.isPlaying()) {
             sound.play();
         }
-
     }
 
     private void createAudioClip() {
